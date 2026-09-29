@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>REAL FOOD Cookbook</title>
+<meta name="description" content="134 gluten-free recipes made without seed oils, refined sugar, or artificial ingredients. Instant PDF download.">
+<meta property="og:title" content="REAL FOOD Cookbook">
+<meta property="og:description" content="134 gluten-free recipes made without seed oils, refined sugar, or artificial ingredients. Instant PDF download.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="/img/chef.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Paste your Meta Pixel / TikTok Pixel code right below this line -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+/* Layout: one narrow sales column; olive hero with the book + price + buy button up top, page previews below, sticky buy bar on phones. Colors follow the cookbook's own palette. */
+:root{
+  --cream:#F7F2E8; --panel:#EEE5D4; --ink:#2B251F; --muted:#6E6356;
+  --olive-dk:#2F3425; --olive:#5B6543; --terra:#A5563A; --terra-dk:#8E4730; --honey:#C1923F; --rule:#D8CCB6;
+  --on-dark:#F4ECDD; --on-dark-muted:#CFC5B1;
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:20px}
+h1,h2{font-family:var(--serif);font-weight:600;line-height:1.05;text-wrap:balance;margin:0}
+.kicker{font-size:12.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--honey)}
+
+/* hero */
+.hero{background:var(--olive-dk);color:var(--on-dark);padding-block:44px 56px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:48px;align-items:center}
+.book{position:relative;width:100%;max-width:400px;aspect-ratio:3/4;margin-inline:auto;border-radius:10px;overflow:hidden;box-shadow:0 26px 50px rgba(0,0,0,.45),0 4px 10px rgba(0,0,0,.3);background:var(--olive)}
+.book img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.book .alt{opacity:0;animation:swap 10s ease-in-out 3s infinite}
+@keyframes swap{0%,5%{opacity:0}15%,55%{opacity:1}65%,100%{opacity:0}}
+.hero h1{font-size:clamp(44px,7vw,74px);letter-spacing:.04em;color:#FBF6EC;margin-top:12px}
+.hero .sub{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(21px,2.6vw,25px);line-height:1.3;color:var(--on-dark-muted);margin:14px 0 22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px;padding:0;list-style:none}
+.chips li{font-size:13px;font-weight:500;padding:6px 12px;border:1px solid rgba(244,236,221,.28);border-radius:30px}
+.price{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+.price .now{font-family:var(--serif);font-weight:600;font-size:54px;line-height:1;color:#FBF6EC}
+.price .was{font-size:20px;color:var(--on-dark-muted);text-decoration:line-through;text-decoration-color:var(--terra);text-decoration-thickness:2px}
+.price .save{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--honey);color:var(--olive-dk);padding:5px 10px;border-radius:4px}
+.buy{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--terra);color:#fff;text-decoration:none;font-weight:700;font-size:18px;letter-spacing:.06em;text-transform:uppercase;padding:18px 34px;border-radius:8px;box-shadow:0 8px 20px rgba(165,86,58,.35);transition:background .15s,transform .15s}
+.buy:hover{background:var(--terra-dk);transform:translateY(-1px)}
+.buy:focus-visible{outline:3px solid var(--honey);outline-offset:3px}
+.hero .buy{width:100%;max-width:420px}
+.trust{font-size:13.5px;color:var(--on-dark-muted);margin-top:12px}
+
+/* what you get */
+.get{padding-block:56px 20px}
+.get h2{font-size:clamp(34px,4.5vw,46px);margin-bottom:24px}
+.list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 40px;padding:0;margin:0;list-style:none}
+.list li{display:flex;gap:14px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--rule)}
+.list b{font-family:var(--serif);font-weight:600;font-size:26px;color:var(--terra);min-width:54px;font-variant-numeric:tabular-nums}
+.rules{margin-top:28px;background:var(--panel);border-radius:10px;padding:22px 24px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.rules div{font-size:15px;color:var(--muted)}
+.rules strong{display:block;color:var(--ink);font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+
+/* previews */
+.previews{padding-block:40px}
+.previews h2{font-size:clamp(34px,4.5vw,46px);margin-bottom:24px}
+.shots{display:grid;gap:22px}
+.shots img{width:100%;height:auto;border-radius:8px;box-shadow:0 10px 30px rgba(43,37,31,.14)}
+
+/* faq + final */
+.faq{padding-block:20px 40px;max-width:720px}
+.faq h2{font-size:clamp(30px,4vw,40px);margin-bottom:12px}
+details{border-bottom:1px solid var(--rule);padding:14px 0}
+summary{cursor:pointer;font-weight:700;font-size:17px}
+details p{margin:8px 0 0;color:var(--muted)}
+.final{background:var(--olive-dk);color:var(--on-dark);text-align:center;padding-block:56px 64px}
+.final h2{font-size:clamp(34px,5vw,50px);color:#FBF6EC;margin-bottom:10px}
+.final p{color:var(--on-dark-muted);margin:0 0 22px}
+.final .price{justify-content:center}
+footer{text-align:center;font-size:13px;color:var(--muted);padding-block:22px 110px}
+
+/* sticky bar (phones) */
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--cream);border-top:1px solid var(--rule);padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));display:none;align-items:center;justify-content:space-between;gap:12px;z-index:10}
+.bar .p{font-family:var(--serif);font-weight:600;font-size:28px;line-height:1}
+.bar .p s{font-family:var(--sans);font-size:14px;color:var(--muted);font-weight:400;margin-left:6px}
+.bar .buy{padding:14px 22px;font-size:15px}
+
+@media (max-width:760px){
+  .hero{padding-block:30px 44px}
+  .hero .wrap{grid-template-columns:1fr;gap:30px}
+  .book{max-width:250px}
+  .hero-text{text-align:center}
+  .chips,.price{justify-content:center}
+  .list{grid-template-columns:1fr}
+  .rules{grid-template-columns:1fr}
+  .bar{display:flex}
+}
+@media (prefers-reduced-motion:reduce){.buy{transition:none}.buy:hover{transform:none}.book .alt{animation:none}}
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="wrap">
+    <div class="book">
+      <img src="img/chef.jpg" alt="The Real Food Kitchen chef holding the REAL FOOD cookbook" width="1000" height="1339">
+      <img class="alt" src="img/cover.jpg" alt="REAL FOOD cookbook cover" width="900" height="1165">
+    </div>
+    <div class="hero-text">
+      <div class="kicker">Digital cookbook · Instant PDF</div>
+      <h1>REAL FOOD</h1>
+      <p class="sub">134 gluten-free recipes made without seed oils, refined sugar, or artificial ingredients.</p>
+      <ul class="chips">
+        <li>134 recipes</li><li>179 pages</li><li>7-day meal plan</li><li>Grocery list</li>
+      </ul>
+      <div class="price">
+        <span class="now">$9.99</span>
+        <span class="was">$15.00</span>
+        <span class="save">Save 33%</span>
+      </div>
+      <a class="buy" href="https://payhip.com/buy?link=8fCue" target="_blank" rel="noopener">Buy now</a>
+      <p class="trust">Secure checkout with Payhip · Download right after purchase</p>
+    </div>
+  </div>
+</section>
+
+<section class="get wrap">
+  <div class="kicker" style="color:var(--terra)">What you get</div>
+  <h2 style="margin-top:8px">Real food you'll actually want to eat</h2>
+  <ul class="list">
+    <li><b>5</b><span>Breads, tortillas &amp; crackers, including the blender Rice Bread</span></li>
+    <li><b>16</b><span>Breakfasts, from banana oat pancakes to a skillet Dutch baby</span></li>
+    <li><b>15</b><span>High-protein meals, great for meal prep</span></li>
+    <li><b>17</b><span>Lunches &amp; dinners: smash burgers, soups, tacos, pizza night</span></li>
+    <li><b>27</b><span>Snacks &amp; desserts, like Snickers stuffed dates</span></li>
+    <li><b>14</b><span>Homemade staples: chocolate, granola, mayo, ketchup</span></li>
+    <li><b>21</b><span>Smoothies, juices &amp; drinks</span></li>
+    <li><b>19</b><span>Vegan &amp; old-school kitchen recipes</span></li>
+    <li><b>30</b><span>Kitchen tricks that make everything easier</span></li>
+    <li><b>7</b><span>Day meal plan with prep schedule and grocery list</span></li>
+  </ul>
+  <div class="rules">
+    <div><strong>Cooks with</strong>Olive oil, butter, ghee, coconut and avocado oil</div>
+    <div><strong>Sweetened with</strong>Fruit and dates first, honey or maple only when needed</div>
+    <div><strong>Ingredients</strong>From a regular grocery store, no expensive substitutes</div>
+  </div>
+</section>
+
+<section class="previews wrap">
+  <div class="kicker" style="color:var(--terra)">Look inside</div>
+  <h2 style="margin-top:8px">See the pages</h2>
+  <div class="shots">
+    <img src="img/1-whats-inside.jpg" alt="Overview: 134 recipes, 179 pages, 14 chapters, 7-day meal plan" width="1600" height="900" loading="lazy">
+    <img src="img/2-chapters.jpg" alt="The 14 chapters, from bread to dessert" width="1600" height="900" loading="lazy">
+    <img src="img/3-every-recipe.jpg" alt="Rice Bread recipe page shown on a tablet" width="1600" height="900" loading="lazy">
+    <img src="img/4-meal-plan.jpg" alt="7-day meal plan and grocery list pages" width="1600" height="900" loading="lazy">
+    <img src="img/5-more-than-recipes.jpg" alt="Kitchen tricks, desserts, and Real Food at a Glance pages" width="1600" height="900" loading="lazy">
+  </div>
+</section>
+
+<section class="faq wrap">
+  <h2>Questions</h2>
+  <details><summary>Is this a physical book?</summary><p>No. It's a digital PDF, so nothing is shipped. You get the download link right after checkout.</p></details>
+  <details><summary>Can I read it on my phone?</summary><p>Yes. It works on phone, tablet, and computer, and the table of contents is clickable. You can also print your favorite recipes.</p></details>
+  <details><summary>Is every recipe gluten-free?</summary><p>Yes, all 134. If you cook for someone with celiac disease, use ingredients labeled certified gluten-free. The book shows you what to look for on labels.</p></details>
+  <details><summary>Do I need special ingredients?</summary><p>No. Everything comes from a regular American grocery store. The bread is made from rice, rice flour, and tapioca.</p></details>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Start cooking real food today</h2>
+    <p>134 recipes, a 7-day meal plan, and a full grocery list.</p>
+    <div class="price">
+      <span class="now">$9.99</span>
+      <span class="was">$15.00</span>
+    </div>
+    <a class="buy" href="https://payhip.com/buy?link=8fCue" target="_blank" rel="noopener">Buy now</a>
+    <p class="trust">Secure checkout with Payhip · Instant PDF download</p>
+  </div>
+</section>
+
+<footer>© Real Food Kitchen · @real.foodkitchen</footer>
+
+<div class="bar">
+  <div class="p">$9.99<s>$15.00</s></div>
+  <a class="buy" href="https://payhip.com/buy?link=8fCue" target="_blank" rel="noopener">Buy now</a>
+</div>
+</body>
+</html>

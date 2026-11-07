@@ -52,6 +52,17 @@ h1,h2{font-family:var(--serif);font-weight:600;line-height:1.05;text-wrap:balanc
 .hero .buy{width:100%;max-width:420px}
 .trust{font-size:13.5px;color:var(--on-dark-muted);margin-top:12px}
 
+/* chef video */
+.watch{padding-block:56px 8px}
+.watch .wrap{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:48px;align-items:center}
+.clip{position:relative;width:100%;max-width:340px;margin-inline:auto;aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:var(--olive-dk);box-shadow:0 18px 40px rgba(43,37,31,.22)}
+.clip video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sound{position:absolute;left:12px;bottom:12px;display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;background:rgba(43,37,31,.78);color:#fff;font:700 13px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;padding:10px 14px;border-radius:30px}
+.sound:focus-visible{outline:3px solid var(--honey);outline-offset:2px}
+.sound svg{width:16px;height:16px}
+.watch h2{font-size:clamp(34px,4.5vw,46px);margin:8px 0 14px}
+.watch p{color:var(--muted);margin:0 0 22px;max-width:46ch}
+
 /* what you get */
 .get{padding-block:56px 20px}
 .get h2{font-size:clamp(34px,4.5vw,46px);margin-bottom:24px}
@@ -95,6 +106,10 @@ footer{text-align:center;font-size:13px;color:var(--muted);padding-block:22px 11
   .list{grid-template-columns:1fr}
   .rules{grid-template-columns:1fr}
   .bar{display:flex}
+  .watch{padding-block:40px 0}
+  .watch .wrap{grid-template-columns:1fr;gap:26px}
+  .watch-text{text-align:center}
+  .watch p{margin-inline:auto}
 }
 @media (prefers-reduced-motion:reduce){.buy{transition:none}.buy:hover{transform:none}.book .alt{animation:none}}
 </style>
@@ -123,6 +138,36 @@ footer{text-align:center;font-size:13px;color:var(--muted);padding-block:22px 11
     </div>
   </div>
 </section>
+
+<section class="watch">
+  <div class="wrap">
+    <div class="clip">
+      <video id="chefReel" src="chef-reel.mp4" poster="chef-reel-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="The Real Food Kitchen chef talking about the REAL FOOD cookbook"></video>
+      <button class="sound" type="button" aria-pressed="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path class="w" d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14" style="display:none"/><path class="x" d="m22 9-6 6M16 9l6 6"/></svg>
+        <span>Tap for sound</span>
+      </button>
+    </div>
+    <div class="watch-text">
+      <div class="kicker" style="color:var(--terra)">From our kitchen</div>
+      <h2>Keep the food you love. Skip the fake stuff.</h2>
+      <p>Burgers, pizza, dessert. Every recipe in the book is made with real ingredients, no seed oils, no refined sugar, nothing artificial.</p>
+      <a class="buy" href="https://payhip.com/buy?link=8fCue" target="_blank" rel="noopener">Get the cookbook · $9.99</a>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var v=document.getElementById('chefReel'),b=v.parentNode.querySelector('.sound'),t=b.querySelector('span'),w=b.querySelector('.w'),x=b.querySelector('.x');
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();}
+  b.addEventListener('click',function(){
+    var on=v.muted;v.muted=!on;
+    if(on){v.currentTime=0;v.play();}
+    b.setAttribute('aria-pressed',on);t.textContent=on?'Sound on':'Tap for sound';
+    w.style.display=on?'':'none';x.style.display=on?'none':'';
+  });
+})();
+</script>
 
 <section class="get wrap">
   <div class="kicker" style="color:var(--terra)">What you get</div>
